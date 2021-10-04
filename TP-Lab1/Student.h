@@ -7,4 +7,6 @@ protected:
 	string specialization;
 	int course;
 	float AvScore;
+public:
+	Student(Student& original);
 };

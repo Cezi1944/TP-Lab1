@@ -38,3 +38,10 @@ Student::Student() {
 		cout << "Неверный ввод!" << endl;
 	}
 }
+Student::Student(Student& original) {
+	Fio = original.Fio;
+	group = original.group;
+	specialization = original.specialization;
+	course = original.course;
+	AvScore = original.AvScore;
+}

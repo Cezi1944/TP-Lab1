@@ -31,3 +31,9 @@ Administration::Administration() {
 		cout << "Неверный ввод!" << endl;
 	}
 }
+Administration::Administration(Administration& original) {
+	Fio = original.Fio;
+	post = original.post;
+	phoneNum = original.phoneNum;
+	Aor = original.Aor;
+}

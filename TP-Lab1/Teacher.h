@@ -7,4 +7,7 @@ protected:
 	int NumOfSubjects;
 	string* groups;
 	string* subjects;
+public:
+	Teacher(Teacher& original);
+	Teacher();
 };

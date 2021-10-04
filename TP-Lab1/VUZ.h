@@ -5,7 +5,7 @@ class VUZ {
 public:
 	VUZ() {};
 	VUZ(string fileName) {};
-	~VUZ() {};
+	virtual ~VUZ() {};
 	virtual void printData() = 0;
 	virtual void scanData() = 0;
 	virtual void saveData(string fileName) = 0;

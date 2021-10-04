@@ -46,3 +46,18 @@ Teacher::Teacher() {
 	}
 
 }
+Teacher::Teacher(Teacher& original) {
+	Fio = original.Fio;
+	NumOfGroups = original.NumOfGroups;
+	groups = new string[NumOfGroups];
+	for (int i = 0; i < NumOfGroups;i++)
+		groups[i] = original.groups[i];
+	NumOfSubjects = original.NumOfSubjects;
+	subjects = new string[NumOfSubjects];
+	for (int i = 0; i < NumOfSubjects;i++)
+		subjects[i] = original.subjects[i];
+}
+Teacher::Teacher() {
+	delete[] groups;
+	delete[] subjects;
+}

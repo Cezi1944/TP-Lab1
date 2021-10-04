@@ -6,4 +6,7 @@ protected:
 	string post;
 	string phoneNum;
 	string Aor;
+public:
+	Administration();
+	Administration(Administration& original);
 };
