@@ -144,6 +144,9 @@
     <ClCompile Include="VUZ.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Administration.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="Teacher.h" />
     <ClInclude Include="VUZ.h" />
     <ClInclude Include="Keeper.h" />
   </ItemGroup>
