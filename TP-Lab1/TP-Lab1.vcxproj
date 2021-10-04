@@ -139,7 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Administration.cpp" />
     <ClCompile Include="Keeper.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Teacher.cpp" />
     <ClCompile Include="TP-Lab1.cpp" />
     <ClCompile Include="VUZ.cpp" />
   </ItemGroup>

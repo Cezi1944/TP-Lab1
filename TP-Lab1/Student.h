@@ -2,7 +2,7 @@
 #include "VUZ.h"
 using namespace std;
 class Student :public VUZ {
-private:
+protected:
 	string group;
 	string specialization;
 	int course;

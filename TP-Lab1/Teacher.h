@@ -2,7 +2,7 @@
 #include "VUZ.h"
 using namespace std;
 class Teacher :public VUZ {
-private:
+protected:
 	int NumOfGroups;
 	int NumOfSubjects;
 	string* groups;

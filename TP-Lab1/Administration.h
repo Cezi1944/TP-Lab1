@@ -2,7 +2,7 @@
 #include "VUZ.h"
 using namespace std;
 class Administration :public VUZ {
-private:
+protected:
 	string post;
 	string phoneNum;
 	string Aor;
