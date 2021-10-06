@@ -1,5 +1,8 @@
 #pragma once
 #include "VUZ.h"
+#include "Student.h"
+#include "Teacher.h"
+#include "Administration.h"
 class Keeper {
 private :
 	int filledN;//количество заполненных ячеек массива
@@ -7,9 +10,10 @@ private :
 	VUZ** mass;//указатель на динамический массив указателей
 public:
 	Keeper();
+	Keeper(ifstream& file);
 	~Keeper();
-	void loadData(string fileName);
-	void saveData(string fileName);
+	void loadData(ifstream& file);
+	void saveData(ofstream& file);
 	void resizeMass();
 	int getN();
 	int getFilledN();

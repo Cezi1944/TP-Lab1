@@ -9,6 +9,11 @@ protected:
 public:
 	Administration();
 	Administration(Administration& original);
+	Administration(ifstream& file);
+	void printData() override;
+	void scanData() override;
+	void saveData(ifstream& file) override;
+	void loadData(ifstream& file) override;
 	string getFio();
 	string getPost();
 	string getPhoneNum();
