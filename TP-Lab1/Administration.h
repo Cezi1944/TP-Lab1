@@ -9,4 +9,12 @@ protected:
 public:
 	Administration();
 	Administration(Administration& original);
+	string getFio();
+	string getPost();
+	string getPhoneNum();
+	string getAor();
+	void setFio(string NFio);
+	void setPost(string NPost);
+	void setPhoneNum(string NPhoneNum);
+	void setAor(string NAor);
 };

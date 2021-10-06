@@ -57,7 +57,25 @@ Teacher::Teacher(Teacher& original) {
 	for (int i = 0; i < NumOfSubjects;i++)
 		subjects[i] = original.subjects[i];
 }
-Teacher::Teacher() {
+Teacher::~Teacher() {
 	delete[] groups;
 	delete[] subjects;
 }
+int Teacher::getNumOfGroups() { return NumOfGroups; }
+int Teacher::getNumOfSubjects() { return NumOfSubjects; }
+string& Teacher::getGroups() {
+	string* copy = new string[NumOfGroups];
+	for (int i = 0; i < NumOfGroups;i++) {
+		copy[i] = groups[i];
+	}
+	return *copy;
+}
+string& Teacher::getSubjects() {
+	string* copy = new string[NumOfSubjects];
+	for (int i = 0; i < NumOfSubjects;i++) {
+		copy[i] = subjects[i];
+	}
+	return *copy;
+}
+string Teacher::getFio() { return Fio; }
+void Teacher::setFio(string NFio) { Fio = NFio; }

@@ -45,3 +45,13 @@ Student::Student(Student& original) {
 	course = original.course;
 	AvScore = original.AvScore;
 }
+string Student::getGroup() { return group; }
+string Student::getFio() { return Fio; }
+string Student::getSpecialization() { return specialization; }
+int Student::getCourse() { return course; }
+float Student::getAvScore() { return AvScore; }
+void Student::setGroup(string Ngroup) { group = Ngroup; }
+void Student::setFio(string NFio) { Fio = NFio; }
+void Student::setSpecialization(string Nspecialization) { specialization = Nspecialization; }
+void Student::setCourse(int Ncourse) { course = Ncourse; }
+void Student::setAvScore(float NAvScore) { AvScore = NAvScore; }

@@ -10,4 +10,10 @@ protected:
 public:
 	Teacher(Teacher& original);
 	Teacher();
+	string getFio();
+	void setFio(string NFio);
+	int getNumOfGroups();
+	int getNumOfSubjects();
+	string& getGroups();
+	string& getSubjects();
 };

@@ -15,3 +15,5 @@ void Keeper::resizeMass() {
 		realloc(*mass, n * sizeof(VUZ*));
 	}
 }
+int Keeper::getN() { return n; }
+int Keeper::getFilledN() { return filledN; }

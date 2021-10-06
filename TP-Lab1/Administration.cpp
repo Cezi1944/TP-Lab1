@@ -37,3 +37,11 @@ Administration::Administration(Administration& original) {
 	phoneNum = original.phoneNum;
 	Aor = original.Aor;
 }
+string Administration::getFio() { return Fio; }
+string Administration::getPost() { return post; }
+string Administration::getPhoneNum() { return phoneNum;}
+string Administration::getAor() { return Aor; }
+void Administration::setFio(string NFio) { Fio = NFio; }
+void Administration::setPost(string NPost) { post = NPost; }
+void Administration::setPhoneNum(string NPhoneNum) { phoneNum = NPhoneNum; }
+void Administration::setAor(string NAor) { Aor = NAor; }
