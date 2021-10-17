@@ -9,11 +9,10 @@ protected:
 	float AvScore;
 public:
 	Student();
-	Student(ifstream& file);
 	Student(Student& original);
 	void printData() override;
 	void scanData() override;
-	void saveData(ifstream& file) override;
+	void saveData(ofstream& file) override;
 	void loadData(ifstream& file) override;
 	string getGroup();
 	string getFio();

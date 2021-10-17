@@ -1,42 +1,13 @@
 #include "Student.h"
 #include <iostream>
+#include <fstream>
 Student::Student() {
 	type = 1;
-	cout << endl <<"Введите ФИО студента: " ;
-	while (!(cin >> Fio) || (cin.peek() != '\n'))
-	{
-		cin.clear();
-		while (cin.get() != '\n');
-		cout << "Неверный ввод!" << endl;
-	}
-	cout << endl << "ВВедите номер группы: ";
-	while (!(cin >> group) || (cin.peek() != '\n'))
-	{
-		cin.clear();
-		while (cin.get() != '\n');
-		cout << "Неверный ввод!" << endl;
-	}
-	cout << endl << "Введите название специальности: ";
-	        while (!(cin >> specialization) || (cin.peek() != '\n'))
-        {
-            cin.clear();
-            while (cin.get() != '\n');
-            cout << "Неверный ввод!" << endl;
-        }
-	cout << endl << "Введите номер курса: ";
-	while (!(cin >> course) || (cin.peek() != '\n'))
-	{
-		cin.clear();
-		while (cin.get() != '\n');
-		cout << "Неверный ввод!" << endl;
-	}
-	cout << endl << "Введите средний бал: ";
-	while (!(cin >> AvScore) || (cin.peek() != '\n'))
-	{
-		cin.clear();
-		while (cin.get() != '\n');
-		cout << "Неверный ввод!" << endl;
-	}
+	Fio = "0";
+	group = "0";
+	specialization = "0";
+	course = 0;
+	AvScore = 0;
 }
 Student::Student(Student& original) {
 	Fio = original.Fio;
@@ -55,3 +26,61 @@ void Student::setFio(string NFio) { Fio = NFio; }
 void Student::setSpecialization(string Nspecialization) { specialization = Nspecialization; }
 void Student::setCourse(int Ncourse) { course = Ncourse; }
 void Student::setAvScore(float NAvScore) { AvScore = NAvScore; }
+void Student::scanData() {
+	cout << endl << "Введите ФИО студента: ";
+	while (!(cin >> Fio) || (cin.peek() != '\n'))
+	{
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Неверный ввод!" << endl;
+	}
+	cout << endl << "ВВедите номер группы: ";
+	while (!(cin >> group) || (cin.peek() != '\n'))
+	{
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Неверный ввод!" << endl;
+	}
+	cout << endl << "Введите название специальности: ";
+	while (!(cin >> specialization) || (cin.peek() != '\n'))
+	{
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Неверный ввод!" << endl;
+	}
+	cout << endl << "Введите номер курса: ";
+	while (!(cin >> course) || (cin.peek() != '\n'))
+	{
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Неверный ввод!" << endl;
+	}
+	cout << endl << "Введите средний бал: ";
+	while (!(cin >> AvScore) || (cin.peek() != '\n'))
+	{
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Неверный ввод!" << endl;
+	}
+}
+void Student::printData() {
+	cout << "ФИО: " << Fio << endl;
+	cout << "Группа: " << group << endl;
+	cout << "Специализация: " << specialization << endl;
+	cout << "Курс: " << course << endl;
+	cout << "Средний балл: " << AvScore << endl;
+}
+void Student::loadData(ifstream& file) {
+	file >> Fio;
+	file >> group;
+	file >> specialization;
+	file >> course;
+	file >> AvScore;
+}
+void Student::saveData(ofstream& file) {
+	file << Fio << endl;
+	file << group << endl;
+	file << specialization << endl;
+	file << course << endl;
+	file << AvScore << endl;
+}

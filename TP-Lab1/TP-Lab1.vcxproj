@@ -152,6 +152,7 @@
     <ClInclude Include="Teacher.h" />
     <ClInclude Include="VUZ.h" />
     <ClInclude Include="Keeper.h" />
+    <ClInclude Include="VUZCreator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

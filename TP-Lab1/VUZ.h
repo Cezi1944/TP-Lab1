@@ -4,11 +4,10 @@ using namespace std;
 class VUZ {
 public:
 	VUZ() {};
-	VUZ(ifstream& file) {};
 	virtual ~VUZ() {};
 	virtual void printData() = 0;
 	virtual void scanData() = 0;
-	virtual void saveData(ifstream& file) = 0;
+	virtual void saveData(ofstream& file) = 0;
 	virtual void loadData(ifstream& file) = 0;
 protected:
 	string Fio;
