@@ -12,9 +12,9 @@ Keeper::Keeper() {
 void Keeper::loadData(ifstream& file) {
 	int type = 0;
 	bool corrupted = 0;
-	file >> n;
-	filledN = n;
-	mass = new VUZ*[n];
+	file >> filledN;
+	while (n<filledN)
+		resizeMass();
 	for (int i = 0; i < n; i++) {
 		file >> type;
 		mass[i] = NULL;
@@ -25,10 +25,15 @@ void Keeper::loadData(ifstream& file) {
 			mass[i]->loadData(file);
 	}
 }
+void Keeper::saveData(ofstream& file) {
+	file << filledN << endl;
+	for (int i = 0;i < filledN;i++)
+		mass[i]->saveData(file);
+}
 Keeper::~Keeper() {
 	for (int i = 0; i < filledN; i++)
 		delete[] mass[i];
-	delete[] mass;
+	free(mass);
 }
 void Keeper::resizeMass() {
 	if (filledN >= n) {
@@ -39,3 +44,46 @@ void Keeper::resizeMass() {
 }
 int Keeper::getN() { return n; }
 int Keeper::getFilledN() { return filledN; }
+void Keeper::printData() {
+	for (int i = 0; i < filledN;i++) {
+		cout << "-" << i << "-" << endl;
+		mass[i]->printData();
+	}
+}
+void Keeper::changeData() {
+	int choise = -1;
+	cout << "Выберите номер записи (0-" << filledN - 1 << "): ";
+	while (!(cin >> choise) || (cin.peek() != '\n'))
+	{
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Неверный ввод!" << endl;
+	}
+	if (choise >= 0 && choise < filledN) {
+		mass[choise]->changeData();
+	}
+}
+void Keeper::destroyData() {
+	int choise = -1;
+	cout << "Выберите номер записи (0-" << filledN - 1 << "): ";
+	while (!(cin >> choise) || (cin.peek() != '\n'))
+	{
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Неверный ввод!" << endl;
+	}
+	delete[] mass[choise];
+	if (choise >= 0 && choise < filledN) {
+		for (int i = choise;i < filledN - 1;i++) {
+			mass[i] = mass[i + 1];
+		}
+		filledN -= 1;
+
+	}
+}
+void Keeper::addData() {
+	filledN += 1;
+	resizeMass();
+	mass[filledN] = &creator.CreateVUZ();
+	mass[filledN]->scanData();
+}

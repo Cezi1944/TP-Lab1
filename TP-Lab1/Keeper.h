@@ -15,6 +15,10 @@ public:
 	~Keeper();
 	void loadData(ifstream& file);
 	void saveData(ofstream& file);
+	void printData();
+	void changeData();
+	void destroyData();
+	void addData();
 	void resizeMass();
 	int getN();
 	int getFilledN();

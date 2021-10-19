@@ -78,9 +78,76 @@ void Student::loadData(ifstream& file) {
 	file >> AvScore;
 }
 void Student::saveData(ofstream& file) {
+	file << type << endl;
 	file << Fio << endl;
 	file << group << endl;
 	file << specialization << endl;
 	file << course << endl;
 	file << AvScore << endl;
+}
+void Student::changeData() {
+	printData();
+	int choise = -1;
+	cout << " 1.ФИО\n2.Группа\n3.Специализация\n4.Курс\n5.Средний балл\n0.Выход\n Выберите пункт для изменения: ";
+	do {
+		while (!(cin >> choise) || (cin.peek() != '\n'))
+		{
+			cin.clear();
+			while (cin.get() != '\n');
+			cout << "Неверный ввод!" << endl;
+		}
+		switch (choise)
+		{
+		case 0:
+			break;
+		case 1:
+			cout << endl << "Введите ФИО: ";
+			while (!(cin >> Fio) || (cin.peek() != '\n'))
+			{
+				cin.clear();
+				while (cin.get() != '\n');
+				cout << "Неверный ввод!" << endl;
+			}
+			break;
+		case 2:
+			cout << endl << "ВВедите номер группы: ";
+			while (!(cin >> group) || (cin.peek() != '\n'))
+			{
+				cin.clear();
+				while (cin.get() != '\n');
+				cout << "Неверный ввод!" << endl;
+			}
+			break;
+		case 3:
+			cout << endl << "Введите название специальности: ";
+			while (!(cin >> specialization) || (cin.peek() != '\n'))
+			{
+				cin.clear();
+				while (cin.get() != '\n');
+				cout << "Неверный ввод!" << endl;
+			}
+			break;
+		case 4:
+			cout << endl << "Введите номер курса: ";
+			while (!(cin >> course) || (cin.peek() != '\n'))
+			{
+				cin.clear();
+				while (cin.get() != '\n');
+				cout << "Неверный ввод!" << endl;
+			}
+			break;
+		case 5:
+			cout << endl << "Введите средний бал: ";
+			while (!(cin >> AvScore) || (cin.peek() != '\n'))
+			{
+				cin.clear();
+				while (cin.get() != '\n');
+				cout << "Неверный ввод!" << endl;
+			}
+			break;
+		default:
+			cout << "Неверный ввод!" << endl;
+			break;
+		}
+	} while (choise != 0);
 }

@@ -65,8 +65,66 @@ void Administration::loadData(ifstream& file) {
 	file >> Aor;
 }
 void Administration::saveData(ofstream& file) {
+	file << type << endl;
 	file << Fio << endl;
 	file << post << endl;
 	file << phoneNum << endl;
 	file << Aor << endl;
+}
+void Administration::changeData() {
+	printData();
+	int choise = -1;
+	cout << " 1.ФИО\n2.Должность\n3.Телефон\n4.Область ответственности\n0.Выход\n Выберите пункт для изменения: ";
+	do {
+		while (!(cin >> choise) || (cin.peek() != '\n'))
+		{
+			cin.clear();
+			while (cin.get() != '\n');
+			cout << "Неверный ввод!" << endl;
+		}
+		switch (choise)
+		{
+		case 0:
+			break;
+		case 1:
+			cout << endl << "Введите ФИО: ";
+			while (!(cin >> Fio) || (cin.peek() != '\n'))
+			{
+				cin.clear();
+				while (cin.get() != '\n');
+				cout << "Неверный ввод!" << endl;
+			}
+			break;
+		case 2:
+			cout << endl << "ВВедите должность: ";
+			while (!(cin >> post) || (cin.peek() != '\n'))
+			{
+				cin.clear();
+				while (cin.get() != '\n');
+				cout << "Неверный ввод!" << endl;
+			}
+			break;
+		case 3:
+			cout << endl << "Введите номер телефона: ";
+			while (!(cin >> phoneNum) || (cin.peek() != '\n'))
+			{
+				cin.clear();
+				while (cin.get() != '\n');
+				cout << "Неверный ввод!" << endl;
+			}
+			break;
+		case 4:
+			cout << endl << "Введите область ответственности: ";
+			while (!(cin >> Aor) || (cin.peek() != '\n'))
+			{
+				cin.clear();
+				while (cin.get() != '\n');
+				cout << "Неверный ввод!" << endl;
+			}
+			break;
+		default:
+			cout << "Неверный ввод!" << endl;
+			break;
+		}
+	} while (choise != 0);
 }

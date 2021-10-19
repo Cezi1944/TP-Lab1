@@ -9,6 +9,7 @@ public:
 	virtual void scanData() = 0;
 	virtual void saveData(ofstream& file) = 0;
 	virtual void loadData(ifstream& file) = 0;
+	virtual void changeData() = 0;
 protected:
 	string Fio;
 	int type = 0;

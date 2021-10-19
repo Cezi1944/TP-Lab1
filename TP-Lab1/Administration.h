@@ -13,6 +13,7 @@ public:
 	void scanData() override;
 	void saveData(ofstream& file) override;
 	void loadData(ifstream& file) override;
+	void changeData() override;
 	string getFio();
 	string getPost();
 	string getPhoneNum();
