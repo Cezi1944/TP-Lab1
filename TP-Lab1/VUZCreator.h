@@ -19,6 +19,7 @@ public:
 			return *(new Administration());
 			break;
 		default:
+			throw "Несуществующий тип класса VUZ";
 			break;
 		}
 	}
@@ -32,23 +33,6 @@ public:
 			while (cin.get() != '\n');
 			cout << "Неверный ввод!" << endl;
 		}
-		if (type < 4 && type>0)
-		{
-			switch (type)
-			{
-			case 1:
-				return *(new Student());
-				break;
-			case 2:
-				return *(new Teacher());
-				break;
-			case 3:
-				return *(new Administration());
-				break;
-			default:
-				break;
-			}
-		}
-
+		return CreateVUZ(type);
 	}
 };

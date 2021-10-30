@@ -50,7 +50,12 @@ int main()
                 system("pause");
                 return 0;
             }
-            base->loadData(in);
+            try {
+                base->loadData(in);
+            }
+            catch (string ex) {
+                cout << "ОШИБКА!!!" << endl << ex << endl;
+            }
             in.close();
             break;
         case 2:
@@ -68,7 +73,12 @@ int main()
             base->changeData();
             break;
         case 4:
-            base->addData();
+            try {
+                base->addData();
+            }
+            catch (string ex){
+                cout << "ОШИБКА!!!" << endl << ex << endl;
+            }
             break;
         case 5:
             base->destroyData();
