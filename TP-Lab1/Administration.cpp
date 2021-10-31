@@ -7,12 +7,17 @@ Administration::Administration() {
 	post = "0";
 	phoneNum = "0";
 	Aor = "0";
+	cout << "Вызван конструктор объекта класса Административный персонал" << endl;
 }
 Administration::Administration(Administration& original) {
 	Fio = original.Fio;
 	post = original.post;
 	phoneNum = original.phoneNum;
 	Aor = original.Aor;
+	cout << "Вызван конструктор копирования объекта класса Административный персонал" << endl;
+}
+Administration::~Administration() {
+	cout << "Вызван деструктор объекта класса Административный персонал" << endl;
 }
 string Administration::getFio() { return Fio; }
 string Administration::getPost() { return post; }
@@ -74,8 +79,8 @@ void Administration::saveData(ofstream& file) {
 void Administration::changeData() {
 	printData();
 	int choise = -1;
-	cout << " 1.ФИО\n2.Должность\n3.Телефон\n4.Область ответственности\n0.Выход\n Выберите пункт для изменения: ";
 	do {
+		cout << " 1.ФИО\n2.Должность\n3.Телефон\n4.Область ответственности\n0.Выход\n Выберите пункт для изменения: ";
 		while (!(cin >> choise) || (cin.peek() != '\n'))
 		{
 			cin.clear();

@@ -10,6 +10,7 @@ protected:
 public:
 	Student();
 	Student(Student& original);
+	~Student();
 	void printData() override;
 	void scanData() override;
 	void saveData(ofstream& file) override;

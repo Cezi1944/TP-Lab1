@@ -12,8 +12,6 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-
-    std::cout << "Hello World!\n";
     ifstream in;
     ofstream out;
     Keeper* base = NULL;
@@ -30,7 +28,6 @@ int main()
     in.close();
     int choise = -1;
     do {
-        system("cls");
         base->printData();
         cout << "1.Загрузка данных из файла\n2.Сохранение данных\n3.Изменить данные\n4.Добавить данные\n5.Удалить данные\n0.Выход";
         cout << endl << "Выберите действие: ";
@@ -84,11 +81,13 @@ int main()
             base->destroyData();
             break;
         case 0:
-            cout << endl << "Завершение работы.";
+            cout << endl << "Завершение работы."<<endl;
             break;
         default:
             break;
         }
+        system("pause");
+        system("cls");
     } while (choise != 0);
     delete base;
 }

@@ -8,6 +8,7 @@ Student::Student() {
 	specialization = "0";
 	course = 0;
 	AvScore = 0;
+	cout << "Вызван конструктор объекта класса Студент" << endl;
 }
 Student::Student(Student& original) {
 	Fio = original.Fio;
@@ -15,6 +16,10 @@ Student::Student(Student& original) {
 	specialization = original.specialization;
 	course = original.course;
 	AvScore = original.AvScore;
+	cout << "Вызван конструктор копирования объекта класса Студент" << endl;
+}
+Student::~Student() {
+	cout << "Вызван деструктор объекта класса Студент" << endl;
 }
 string Student::getGroup() { return group; }
 string Student::getFio() { return Fio; }
@@ -88,8 +93,9 @@ void Student::saveData(ofstream& file) {
 void Student::changeData() {
 	printData();
 	int choise = -1;
-	cout << " 1.ФИО\n2.Группа\n3.Специализация\n4.Курс\n5.Средний балл\n0.Выход\n Выберите пункт для изменения: ";
+
 	do {
+		cout << " 1.ФИО\n2.Группа\n3.Специализация\n4.Курс\n5.Средний балл\n0.Выход\n Выберите пункт для изменения: ";
 		while (!(cin >> choise) || (cin.peek() != '\n'))
 		{
 			cin.clear();

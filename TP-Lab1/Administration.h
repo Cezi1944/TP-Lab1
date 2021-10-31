@@ -9,6 +9,7 @@ protected:
 public:
 	Administration();
 	Administration(Administration& original);
+	~Administration();
 	void printData() override;
 	void scanData() override;
 	void saveData(ofstream& file) override;

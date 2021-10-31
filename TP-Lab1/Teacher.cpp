@@ -10,7 +10,7 @@ Teacher::Teacher() {
 	NumOfSubjects = 0;
 	FilledNumOfSubjects = 0;
 	subjects = NULL;
-
+	cout << "Вызван конструктор объекта класса Преподаватель" << endl;
 }
 Teacher::Teacher(Teacher& original) {
 	Fio = original.Fio;
@@ -24,10 +24,12 @@ Teacher::Teacher(Teacher& original) {
 	subjects = new string[NumOfSubjects];
 	for (int i = 0; i < NumOfSubjects;i++)
 		subjects[i] = original.subjects[i];
+	cout << "Вызван конструктор копирования объекта класса Преподаватель" << endl;
 }
 Teacher::~Teacher() {
 	delete[] groups;
 	delete[] subjects;
+	cout << "Вызван деструктор объекта класса Преподаватель" << endl;
 }
 int Teacher::getNumOfGroups() { return NumOfGroups; }
 int Teacher::getNumOfSubjects() { return NumOfSubjects; }
@@ -134,8 +136,9 @@ void Teacher::changeData() {
 	int subject = 0;
 	int choise = -1;
 
-	cout << " 1.ФИО\n2.Группы\n3.Предметы\n0.Выход\n Выберите пункт для изменения: ";
+	
 	do {
+		cout << " 1.ФИО\n2.Группы\n3.Предметы\n0.Выход\n Выберите пункт для изменения: ";
 		while (!(cin >> choise) || (cin.peek() != '\n'))
 		{
 			cin.clear();
